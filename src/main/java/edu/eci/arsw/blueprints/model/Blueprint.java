@@ -47,7 +47,12 @@ public class Blueprint {
 
     @Override
     public String toString() {
-        return "Blueprint{" + "author=" + author + ", name=" + name + '}';
+        String pnts = "";
+        for(Point x : points){
+            pnts += " " + x.getX() + "." + x.getY() + "; ";
+        }
+        return "Blueprint{" + "Author: " + author + ", Name: " + name +
+                ", Puntos: " + pnts + '}';
     }
 
     @Override
@@ -86,6 +91,9 @@ public class Blueprint {
         return true;
     }
     
+    public void setPoints(List<Point> points) {
+        this.points = points;
+    }
     
     
 }
