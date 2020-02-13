@@ -35,12 +35,19 @@ public class RestAPIApplication {
         
         bpServices = bPrints.getBean(BlueprintsServices.class);
         
-        Point[] points=new Point[]{new Point(0, 0),new Point(1, 1), new Point(1, 2),new Point(2, 2)};
-
-        Blueprint bp = new Blueprint("Villa", "test1", points);
+        Point[] points1=new Point[]{new Point(0, 0),new Point(10, 10), new Point(15, 20),new Point(20, 20)};
+        Blueprint bp = new Blueprint("Villate", "enProduccion", points1);
         bpServices.addNewBlueprint(bp);
+        
+        Point[] points2=new Point[]{new Point(1, 1),new Point(10, 10), new Point(10, 20),new Point(20, 20)};
+        Blueprint bp2 = new Blueprint("Isaza", "enProduccion2", points2);
+        bpServices.addNewBlueprint(bp2);
+        
+        
 
         System.out.println(bpServices.getAllBlueprints());
+        System.out.println(bpServices.getBlueprint("Villate", "enProduccion").getAuthor());
+        System.out.println(bpServices.getBlueprint("Isaza", "enProduccion2").getAuthor());
     }
 
 }
